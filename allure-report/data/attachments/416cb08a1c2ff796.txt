@@ -1,0 +1,5 @@
+I am beforeAll Hook
+I am beforeEach Hook
+I am test1
+I am afterEach Hook
+I am afterAll Hook

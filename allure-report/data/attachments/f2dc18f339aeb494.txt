@@ -1,0 +1,25 @@
+Account Assistant
+Automaton Tester
+Chief Executive Officer
+Chief Financial Officer
+Chief Technical Officer
+Content Specialist
+Customer Success Manager
+Data Annotation
+Data2025_04_07_15_01_58
+Data2025_04_07_15_05_17
+Database Administrator
+Finance Manager
+Financial Analyst
+gkyiYwRNtr
+Head of Support
+HR Associate
+HR Manager
+IT Manager
+Network Administrator
+Payroll Administrator
+Pre-Sales Coordinator
+QA Analyst I
+QA Engineer
+QA Lead
+Test passed successfully

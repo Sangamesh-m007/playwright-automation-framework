@@ -1,0 +1,83 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Login functionality - step by step status
+- Location: C:\Users\mudak\Downloads\playwright-main\playwright-main\basic\login3.spec.js:3:1
+
+# Error details
+
+```
+Error: locator.textContent: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('//h2[normalize-space()=\'Advertisers\']')
+
+    at C:\Users\mudak\Downloads\playwright-main\playwright-main\basic\login3.spec.js:27:79
+    at C:\Users\mudak\Downloads\playwright-main\playwright-main\basic\login3.spec.js:26:16
+```
+
+# Page snapshot
+
+```yaml
+- img "hero-img"
+- img
+- group:
+  - textbox "Login": admin@alkimi.org
+  - text: Login
+- group:
+  - textbox "Password": AlkimiPssw0rd!
+  - text: Password
+  - img
+- paragraph: Invalid credentials
+- button "Log In"
+- contentinfo:
+  - img
+  - separator
+  - paragraph: © 2025 DSP.com
+- alert
+```
+
+# Test source
+
+```ts
+   1 | const { test, expect } = require('@playwright/test');
+   2 |
+   3 | test('Login functionality - step by step status', async ({ page }) => {
+   4 |   try {
+   5 |     
+   6 |     await test.step('Navigate to login page', async () => {
+   7 |       await page.goto('https://qa.alkimi-dsp.com/?_vercel_share=0pupzo9EyM9CIo3nPnGgaDI9fM2fUA6n');
+   8 |     });
+   9 |
+  10 |     
+  11 |     await test.step('Enter username', async () => {
+  12 |       await page.fill('#username', 'admin@alkimi.org');
+  13 |     });
+  14 |
+  15 |     
+  16 |     await test.step('Enter password', async () => {
+  17 |       await page.fill('#password', 'AlkimiPssw0rd!');
+  18 |     });
+  19 |
+  20 |
+  21 |     await test.step('Click login', async () => {
+  22 |       await page.click("//button[normalize-space()='Log In']");
+  23 |     });
+  24 |
+  25 |     
+  26 |     await test.step('Verify successful login', async () => {
+> 27 |       const adv = await page.locator("//h2[normalize-space()='Advertisers']").textContent();
+     |                                                                               ^ Error: locator.textContent: Test timeout of 30000ms exceeded.
+  28 |       await expect(adv).toBe('Advertisers');
+  29 |     });
+  30 |   } catch (error) {
+  31 |     console.error('Test failed at step:', error.message);
+  32 |     throw error; 
+  33 |   }
+  34 | });
+  35 |
+```

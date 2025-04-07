@@ -29,7 +29,7 @@ test.describe('Group all tests in one suite', () => {
         console.log("I am test2")
     })
 
-    // Test Group 2 (Skipping the group as per original code)
+    // Test Group 2 
     test.skip('Test3', async ({ page }) => {
         console.log("I am test3")
     })

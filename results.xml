@@ -1,42 +1,12 @@
-<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="3.935494">
-<testsuite name="describe2.spec.js" timestamp="2025-04-07T05:06:30.173Z" hostname="chromium" tests="4" failures="0" skipped="0" time="2.979" errors="0">
-<testcase name="Main Test Suite › grouping1 › test1" classname="describe2.spec.js" time="0.754">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="9.357079">
+<testsuite name="login2.spec.js" timestamp="2025-04-07T09:26:35.283Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.628" errors="0">
+<testcase name="Login functionality - step by step status" classname="login2.spec.js" time="8.628">
 <system-out>
-<![CDATA[I am beforeAll Hook
-I am beforeEach Hook
-I am test1
-I am afterEach Hook
-I am afterAll Hook
-]]>
-</system-out>
-</testcase>
-<testcase name="Main Test Suite › grouping1 › test2" classname="describe2.spec.js" time="0.701">
-<system-out>
-<![CDATA[I am beforeAll Hook
-I am beforeEach Hook
-I am test2
-I am afterEach Hook
-I am afterAll Hook
-]]>
-</system-out>
-</testcase>
-<testcase name="Main Test Suite › grouping2 › test3" classname="describe2.spec.js" time="0.696">
-<system-out>
-<![CDATA[I am beforeAll Hook
-I am beforeEach Hook
-I am test3
-I am afterEach Hook
-I am afterAll Hook
-]]>
-</system-out>
-</testcase>
-<testcase name="Main Test Suite › grouping2 › test4" classname="describe2.spec.js" time="0.828">
-<system-out>
-<![CDATA[I am beforeAll Hook
-I am beforeEach Hook
-I am test4
-I am afterEach Hook
-I am afterAll Hook
+<![CDATA[ Navigate to login page - Passed
+Enter username - Passed
+ Enter password - Passed
+ Click login - Passed
+Verify successful login - Passed
 ]]>
 </system-out>
 </testcase>
