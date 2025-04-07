@@ -1,5 +1,0 @@
- Navigate to login page - Passed
-Enter username - Passed
- Enter password - Passed
- Click login - Passed
-Verify successful login - Passed

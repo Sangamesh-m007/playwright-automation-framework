@@ -14,7 +14,7 @@ test('Login functionality - step by step status', async ({ page }) => {
 
     
     await test.step('Enter password', async () => {
-      await page.fill('#password', 'AlkimiPssw0rd!');
+      await page.fill('#password', 'AlkimiPassw0rd!');
     });
 
 

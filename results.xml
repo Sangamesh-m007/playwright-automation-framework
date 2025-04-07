@@ -1,14 +1,14 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="9.357079">
-<testsuite name="login2.spec.js" timestamp="2025-04-07T09:26:35.283Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.628" errors="0">
-<testcase name="Login functionality - step by step status" classname="login2.spec.js" time="8.628">
-<system-out>
-<![CDATA[ Navigate to login page - Passed
-Enter username - Passed
- Enter password - Passed
- Click login - Passed
-Verify successful login - Passed
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="13.979981999999843">
+<testsuite name="login2.spec.js" timestamp="2025-04-07T11:41:12.116Z" hostname="chromium" tests="1" failures="0" skipped="0" time="11.804" errors="0">
+<testcase name="Login functionality - step by step status" classname="login2.spec.js" time="11.804">
+<system-err>
+<![CDATA[Failed to report to Tusk: Request failed with status code 404
+Failed to report to Tusk: Request failed with status code 404
+Failed to report to Tusk: Request failed with status code 404
+Failed to report to Tusk: Request failed with status code 404
+Failed to report to Tusk: Request failed with status code 404
 ]]>
-</system-out>
+</system-err>
 </testcase>
 </testsuite>
 </testsuites>
