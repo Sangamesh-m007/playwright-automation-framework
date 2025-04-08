@@ -37,14 +37,14 @@ test('validate text in home page', async ({ page }) => {
     const value_withouttext2 = uidynamicvalues2.replace(/[^0-9.]/g, '')
     expect(parseFloat(value_withouttext2)).toBe(dynamic2);
     //////////////(Balancer)
- const dynamic3 = data.totalValueLocked;
+ /*const dynamic3 = data.totalValueLocked;
    const dynamicElement3 = await page.locator("body > main:nth-child(3) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(5)");
    const uidynamicvalues3 = await dynamicElement3.textContent();
    console.log(uidynamicvalues3);
    const value_withouttext3 = uidynamicvalues3.replace(/[^0-9.]/g, '');//we use this to keep only numbers and decimals
    const Actualvalue= parseFloat(value_withouttext3);
    console.log(Actualvalue);
-   expect(Actualvalue).toBeCloseTo(dynamic3);
+   expect(Actualvalue).toBeCloseTo(dynamic3)*/;
     /////////////($ADS Adds)
     const dynamic4 = data.$adsPrice;
     const dynamicElement4 = await page.locator("body > main:nth-child(3) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2)")

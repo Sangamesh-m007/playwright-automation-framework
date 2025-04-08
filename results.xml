@@ -1,14 +1,36 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="13.979981999999843">
-<testsuite name="login2.spec.js" timestamp="2025-04-07T11:41:12.116Z" hostname="chromium" tests="1" failures="0" skipped="0" time="11.804" errors="0">
-<testcase name="Login functionality - step by step status" classname="login2.spec.js" time="11.804">
-<system-err>
-<![CDATA[Failed to report to Tusk: Request failed with status code 404
-Failed to report to Tusk: Request failed with status code 404
-Failed to report to Tusk: Request failed with status code 404
-Failed to report to Tusk: Request failed with status code 404
-Failed to report to Tusk: Request failed with status code 404
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="25.773086">
+<testsuite name="validation.spec.js" timestamp="2025-04-08T09:41:41.372Z" hostname="chromium" tests="1" failures="0" skipped="0" time="24.187" errors="0">
+<testcase name="validate text in home page" classname="validation.spec.js" time="24.187">
+<system-out>
+<![CDATA[{
+  numberOfPublishers: [33m9014[39m,
+  stAdsTokenValue: [33m0.5660787240381235[39m,
+  stakingPoolApy: [33m0[39m,
+  circulatingSupply: [33m236991084.18[39m,
+  totalSupply: [33m250000000[39m,
+  [32m'$adsPrice'[39m: [33m0.096205[39m,
+  transactionCount: [33m1671971295[39m,
+  snapshotNumber: [33m8448931[39m,
+  stAdsInPool: [33m0[39m,
+  impressionsCount: [33m0[39m,
+  totalNumberOfValidators: [33m1228[39m,
+  tvlValidators: [33m61400000[39m,
+  waitListNumber: [33m59[39m,
+  transactionCountsTillDate: [33m1671971295[39m,
+  quarterlyTransactionCount: [33m71661947[39m,
+  impressionsCountTillDate: [1mnull[22m,
+  quarterlyImpressionsCount: [1mnull[22m,
+  totalYearlyFeeRevenue: [33m48770.986[39m,
+  quarterlyFeeRevenue: [1mnull[22m,
+  totalValueLocked: [33m686800.56[39m
+}
+Total Supply250,000,000
+Circulating Supply236,991,084.18
+$ADS Price $0.095
+Unlock the Power of Transparency. Whether you’re a media buyer, publisher or a curious user, gain full visibility into ad-spends and their impact. Track metrics, analyse results, and ensure every impression is recorded.
+Unlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.
 ]]>
-</system-err>
+</system-out>
 </testcase>
 </testsuite>
 </testsuites>
