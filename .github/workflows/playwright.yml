@@ -12,7 +12,7 @@ jobs:
       - run: npx playwright test Get involved.spec.js
         continue-on-error: true
       - run: npm install -g tuskr
-      - name: Upload results to Tuskr with unique test run name
+      - name: Upload results to Tuskr with unique test run names
         env:
           TEST_RUN_ID: b458d916-d366-4ae9-aded-ce3be9d8fbc4
           API_TOKEN: ${{ secrets.PLAYWRIGHTAPITOKEN }}
