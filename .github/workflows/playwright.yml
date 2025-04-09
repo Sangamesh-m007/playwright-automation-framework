@@ -12,4 +12,5 @@ jobs:
       - run: npx playwright test Get involved.spec.js
         continue-on-error: true
       - run: npm install -g tuskr
-      - run: tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')"  --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json" 
+      - run: tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')
+          RUN_NAME="Playwright Test Run - $TIMESTAMP""  --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json" 
