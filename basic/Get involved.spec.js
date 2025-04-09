@@ -17,7 +17,7 @@ const getinvolved = await page.locator("h2[class=' text-[28px] leading-[28px] lg
     const buytext = await page.locator("(//h3[normalize-space()='BUY $ADS'])[1]").textContent()
     expect(buytext).toBe("BUY $ADS");
     const byebutton = await page.locator("//a[normalize-space()='Buy $ADS']")
-    expect(byebutton).toBeVisible()
+    expect(byebutton).toBeVisible();
      })
     
 ///HOME PAGE(1)
