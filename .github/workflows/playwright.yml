@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
       - run: npm ci
-      - run: npx playwright install
+      - run: npx playwright install validation.spec.js
       - run: npx playwright test
         continue-on-error: true
       - run: npm install -g tuskr
