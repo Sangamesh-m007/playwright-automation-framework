@@ -12,4 +12,9 @@ jobs:
       - run: npx playwright test Get involved.spec.js
         continue-on-error: true
       - run: npm install -g tuskr
+      - name: Upload results to Tuskr with unique test run name
+        env:
+          TEST_RUN_ID: b458d916-d366-4ae9-aded-ce3be9d8fbc4
+          API_TOKEN: ${{ secrets.PLAYWRIGHTAPITOKEN }}
+          PROJECT_ID: ${{ secrets.PLAYWRIGHTPROJECT }}
       - run: tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test"  --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json" 
