@@ -17,4 +17,6 @@ jobs:
           TEST_RUN_ID: b458d916-d366-4ae9-aded-ce3be9d8fbc4
           API_TOKEN: ${{ secrets.PLAYWRIGHTAPITOKEN }}
           PROJECT_ID: ${{ secrets.PLAYWRIGHTPROJECT }}
+      - run: TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')
+                 RUN_NAME="Playwright Test Run - $TIMESTAMP"
       - run: tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test"  --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json" 
