@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with: { node-version: '18' }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
       - run: npm ci
-      - run: npx playwright install --with-deps
+      - run: npx playwright install
       - run: npx playwright test
       - run: tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test"  --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json" 
