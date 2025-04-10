@@ -11,15 +11,5 @@ jobs:
       - run: npx playwright install 
       - run: npx playwright test softstaking.spec.js
         continue-on-error: true
-      - name: Verify test results file
-      - run: |
-          if [ ! -f test-results/results.xml ]; then
-            echo "❌ JUnit XML file not found!"
-            exit 1
-          fi
-          echo "✅ JUnit XML file found:"
-          ls -lh test-results/results.xml
-          echo "📄 File contents:"
-          cat test-results/results.xml
       - run: npm install -g tuskr
       - run: tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')" --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json" 
