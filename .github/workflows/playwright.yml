@@ -1,44 +1,15 @@
 name: Playwright Tests
-
 on: [push]
-
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
+        with: { node-version: '20' }
       - run: npm ci
-      - run: npx playwright install
-
-      # Run tests and continue even if they fail
-      - name: Run Playwright Tests
-        run: npx playwright test softstaking.spec.js
+      - run: npx playwright install 
+      - run: npx playwright test softstaking.spec.js
         continue-on-error: true
-
-      # Debug: check if results.xml exists
-      - name: Check if results.xml exists
-        run: |
-          echo "Checking for results.xml..."
-          ls -l results.xml || echo "❌ results.xml not found"
-          cat results.xml || echo "❌ Could not read results.xml"
-          
-
-      # Install Tuskr CLI
       - run: npm install -g tuskr
-
-      # Upload to Tuskr
-      - name: Upload results to Tuskr
-        run: |
-          tuskr \
-            --project=${{ secrets.PLAYWRIGHTPROJECT }} \
-            --test-run-name="Basic playwright test TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')" \
-            --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} \
-            --file="results.xml" \
-            --test-case-rules="rules/test-case-rules-basic.json"
- 
+      - run: tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')" --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json" 
