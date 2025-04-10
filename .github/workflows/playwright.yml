@@ -11,7 +11,7 @@ jobs:
       - run: npx playwright install 
       - run: npx playwright test softstaking.spec.js
         continue-on-error: true
-      - name: Upload Playwright test-results as artifacts
+      - name: Upload test-results folder
         uses: actions/upload-artifact@v4
         with:
           name: test-results
