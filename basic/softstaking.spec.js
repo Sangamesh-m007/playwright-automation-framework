@@ -15,5 +15,5 @@ const soft = await page.locator("//p[normalize-space()='Soft Staking']").textCon
     expect(video2).toBeVisible()
     const softtext = await page.getByText("Unlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.").innerText()
     console.log(softtext);
-    expect(softtext).toBe("Unlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.");
+    expect(softtext).toBe("nlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.");
      })
