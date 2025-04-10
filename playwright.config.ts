@@ -21,7 +21,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
  // reporter: [["html"],['junit', { outputFile: 'results.xml' }]],
- reporter: [['list'],['junit', { outputFile: 'results.xml' }]],
+ reporter: [['list'],['junit', { outputFile: 'testresults/results.xml' }]],
   // reporter: 'list',
   //reporter: 'line',
   //reporter: 'dot',
@@ -42,8 +42,8 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     //trace: 'on-first-retry',
-    //screenshot: 'only-on-failure',
-    video:'on',
+    screenshot: 'only-on-failure',
+   video:'on',
   },
 
   /* Configure projects for major browsers */
