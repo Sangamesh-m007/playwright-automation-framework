@@ -27,6 +27,7 @@ jobs:
           echo "Checking for results.xml..."
           ls -l results.xml || echo "❌ results.xml not found"
           cat results.xml || echo "❌ Could not read results.xml"
+          
 
       # Install Tuskr CLI
       - run: npm install -g tuskr
@@ -40,3 +41,5 @@ jobs:
             --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} \
             --file="results.xml" \
             --test-case-rules="rules/test-case-rules-basic.json"
+      - name: Show test results
+  run: cat results.xml
