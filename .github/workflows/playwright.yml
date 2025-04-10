@@ -41,5 +41,4 @@ jobs:
             --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} \
             --file="results.xml" \
             --test-case-rules="rules/test-case-rules-basic.json"
-      - name: Show test results
-  run: cat results.xml
+ 
