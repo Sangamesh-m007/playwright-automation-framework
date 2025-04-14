@@ -1,27 +1,57 @@
-<testsuites id="" name="Playwright Tests" tests="2" failures="1" skipped="0" errors="0" time="12.391885999999998">
-  <testsuite name="example.spec.ts" timestamp="2024-02-26T08:20:39.067Z" hostname="chromium" tests="2" failures="1" skipped="0" time="9.695" errors="0">
-    <testcase name="has title" classname="example.spec.ts" time="6.967">
-      <failure message="example.spec.ts:4:5 has title" type="FAILURE">
-        <![CDATA[
-        [chromium] › example.spec.ts:4:5 › has title ─────────────────────────────────────────────────────
+<testsuites id="" name="" tests="2" failures="1" skipped="0" errors="0" time="12.391885999999998">
+<testsuite name="example.spec.ts" timestamp="2024-02-26T08:20:39.067Z" hostname="chromium" tests="2" failures="1" skipped="0" time="9.695" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="6.967">
+<failure message="example.spec.ts:4:5 has title" type="FAILURE">
+<![CDATA[  [chromium] › example.spec.ts:4:5 › has title ─────────────────────────────────────────────────────
 
-        Error: Timed out 5000ms waiting for expect(locator).toHaveTitle(expected)
-        Locator: locator(':root')
-        Expected pattern: /Tuskr/
-        Received string: "Fast and reliable end-to-end testing for modern web apps | Playwright"
-        Call log:
-          - expect.toHaveTitle with timeout 5000ms
-          - waiting for locator(':root')
-          - locator resolved to <html lang="en" dir="ltr" data-theme="light" data-rh="…>…</html>
-          - unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
-        ]]>
-        <attachment>test-results/example-has-title-chromium/test-failed-1.png</attachment>
-        <video>test-results/example-has-title-chromium/video.mp4</video>
-      </failure>
-    </testcase>
+    Error: Timed out 5000ms waiting for expect(locator).toHaveTitle(expected)
 
-    <testcase name="get started link" classname="example.spec.ts" time="2.728">
-      <!-- This test case passed, so no failure details or attachment needed -->
-    </testcase>
-  </testsuite>
+    Locator: locator(':root')
+    Expected pattern: /Tuskr/
+    Received string:  "Fast and reliable end-to-end testing for modern web apps | Playwright"
+    Call log:
+      - expect.toHaveTitle with timeout 5000ms
+      - waiting for locator(':root')
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-rh="…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+
+
+       6 |
+       7 |   // Expect a title "to contain" a substring.
+    >  8 |   await expect(page).toHaveTitle(/Tuskr/);
+         |                      ^
+       9 | });
+      10 |
+      11 | // This will pass
+
+        at /Users/gauravtrivedi/Desktop/apps/tuskr-junit-intg/playwright/basic/example.spec.ts:8:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/example-has-title-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/example-has-title-chromium/test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="2.728">
+</testcase>
+</testsuite>
 </testsuites>

@@ -9,9 +9,9 @@ jobs:
         with: { node-version: '20' }
       - run: npm ci
       - run: npx playwright install
-      - run: npx playwright test softstaking.spec.js
+      - run: npx playwright test
         continue-on-error: true
       - run: npm install -g tuskr
       - run: |
           TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')
-          tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test Time= ${TIMESTAMP}" --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json"
+          tuskr --project=demo --test-run-name="Basic playwright test Time= ${TIMESTAMP}" --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json"
