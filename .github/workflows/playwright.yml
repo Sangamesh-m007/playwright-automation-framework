@@ -29,16 +29,17 @@ jobs:
       - name: Install Tuskr CLI
         run: npm install -g tuskr
 
-      - name: Collect failed test artifacts (screenshots and videos)
+      - name: Collect screenshots and videos for failed tests
         run: |
           mkdir -p collected-artifacts
-          # Copy the JUnit results file
-          cp results.xml collected-artifacts/
-          # Collect the screenshots and videos for failed tests
+          # Copy the JUnit results file for Tuskr upload
+          cp test-results/junit.xml collected-artifacts/
+
+          # Collect the screenshots and videos only for failed tests
           find test-results -type f \( -name "*.png" -o -name "*.webm" \) -exec cp {} collected-artifacts/ \;
 
       - name: Create ZIP for Tuskr upload
-        run: zip -j results.zip collected-artifacts/*
+        run: zip -r results.zip collected-artifacts/
 
       - name: Upload results to Tuskr
         run: |
