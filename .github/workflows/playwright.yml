@@ -14,4 +14,4 @@ jobs:
       - run: npm install -g tuskr
       - run: |
           TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')
-          tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test ${TIMESTAMP}" --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json"
+          tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test Time= ${TIMESTAMP}" --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json"
