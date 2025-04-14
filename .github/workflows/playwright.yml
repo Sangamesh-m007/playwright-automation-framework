@@ -1,22 +1,52 @@
 name: Playwright Tests
+
 on: [push]
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: '20' }
-      - run: npm ci
-      - run: npx playwright install 
-      - run: npx playwright test softstaking.spec.js
-        continue-on-error: true
-          # Wait for screenshots/videos to finish saving
-      - name: Wait for artifacts to be written
-        run: sleep 5
 
-      # Zip results.xml and test-results folder
-      - name: Zip test results and artifacts
-        run: zip -r results.zip results.xml test-results || echo "No test-results folder, skipping"
+    steps:
+      # Checkout the repository
+      - uses: actions/checkout@v4
+
+      # Setup Node.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Install dependencies
+      - run: npm ci
+
+      # Install Playwright browsers
+      - run: npx playwright install
+
+      # Run Playwright tests
+      - run: npx playwright test softstaking.spec.js
+        continue-on-error: true  # Continue even if tests fail (so artifacts still upload)
+
+      # Install Tuskr CLI
       - run: npm install -g tuskr
-      - run: tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')" --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json" 
+
+      # ✅ Collect screenshots, videos, and results.xml into a flat folder
+      - name: Collect screenshots and videos
+        run: |
+          mkdir -p test-artifacts
+          find test-results -type f \( -name "*.png" -o -name "*.webm" \) -exec cp {} test-artifacts/ \;
+          cp results.xml test-artifacts/
+
+      # ✅ Zip the contents
+      - name: Create ZIP for Tuskr upload
+        run: |
+          cd test-artifacts
+          zip -r ../results.zip .
+
+      # ✅ Upload to Tuskr
+      - name: Push results to Tuskr
+        run: |
+          tuskr \
+            --project=${{ secrets.PLAYWRIGHTPROJECT }} \
+            --test-run-name="Basic playwright test TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')" \
+            --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} \
+            --file="results.zip" \
+            --test-case-rules="rules/test-case-rules-basic.json"
