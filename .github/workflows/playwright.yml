@@ -21,17 +21,20 @@ jobs:
       - name: Install Playwright
         run: npx playwright install
 
-      - name: Run Playwright tests
-        run: npx playwright test basic/softstaking.spec.js --reporter=junit
+      - name: Run Playwright tests with video and screenshot capture
+        run: |
+          npx playwright test basic/softstaking.spec.js --reporter=junit --video=on-first-retry --screenshot=only-on-failure
         continue-on-error: true
 
       - name: Install Tuskr CLI
         run: npm install -g tuskr
 
-      - name: Collect screenshots and videos
+      - name: Collect failed test artifacts (screenshots and videos)
         run: |
           mkdir -p collected-artifacts
+          # Copy the JUnit results file
           cp results.xml collected-artifacts/
+          # Collect the screenshots and videos for failed tests
           find test-results -type f \( -name "*.png" -o -name "*.webm" \) -exec cp {} collected-artifacts/ \;
 
       - name: Create ZIP for Tuskr upload
