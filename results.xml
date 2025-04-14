@@ -1,169 +1,6 @@
-<testsuites id="" name="" tests="18" failures="4" skipped="2" errors="0" time="92.322322">
-<testsuite name="bootstramp.spec.js" timestamp="2025-04-11T04:57:24.478Z" hostname="chromium" tests="1" failures="0" skipped="0" time="18.007" errors="0">
-<testcase name="bootstrap multi" classname="bootstramp.spec.js" time="18.007">
-</testcase>
-</testsuite>
-<testsuite name="describe.spec.js" timestamp="2025-04-11T04:57:24.478Z" hostname="chromium" tests="4" failures="0" skipped="2" time="1.69" errors="0">
-<testcase name="Group all tests in one suite › Test1" classname="describe.spec.js" time="0.775">
-<system-out>
-<![CDATA[I am beforeAll Hook
-I am beforeEach Hook
-I am test1
-I am afterEach Hook
-I am afterAll Hook
-]]>
-</system-out>
-</testcase>
-<testcase name="Group all tests in one suite › Test2" classname="describe.spec.js" time="0.915">
-<system-out>
-<![CDATA[I am beforeAll Hook
-I am beforeEach Hook
-I am test2
-I am afterEach Hook
-I am afterAll Hook
-]]>
-</system-out>
-</testcase>
-<testcase name="Group all tests in one suite › Test3" classname="describe.spec.js" time="0">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Group all tests in one suite › Test4" classname="describe.spec.js" time="0">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-</testsuite>
-<testsuite name="describe2.spec.js" timestamp="2025-04-11T04:57:24.478Z" hostname="chromium" tests="4" failures="0" skipped="0" time="1.987" errors="0">
-<testcase name="Main Test Suite › grouping1 › test1" classname="describe2.spec.js" time="0.837">
-<system-out>
-<![CDATA[I am beforeAll Hook
-I am beforeEach Hook
-I am test1
-I am afterEach Hook
-I am afterAll Hook
-]]>
-</system-out>
-</testcase>
-<testcase name="Main Test Suite › grouping1 › test2" classname="describe2.spec.js" time="0.4">
-<system-out>
-<![CDATA[I am beforeAll Hook
-I am beforeEach Hook
-I am test2
-I am afterEach Hook
-I am afterAll Hook
-]]>
-</system-out>
-</testcase>
-<testcase name="Main Test Suite › grouping2 › test3" classname="describe2.spec.js" time="0.399">
-<system-out>
-<![CDATA[I am beforeAll Hook
-I am beforeEach Hook
-I am test3
-I am afterEach Hook
-I am afterAll Hook
-]]>
-</system-out>
-</testcase>
-<testcase name="Main Test Suite › grouping2 › test4" classname="describe2.spec.js" time="0.351">
-<system-out>
-<![CDATA[I am beforeAll Hook
-I am beforeEach Hook
-I am test4
-I am afterEach Hook
-I am afterAll Hook
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="example.spec.ts" timestamp="2025-04-11T04:57:24.478Z" hostname="chromium" tests="2" failures="1" skipped="0" time="38.467" errors="0">
-<testcase name="has title" classname="example.spec.ts" time="22.004">
-<failure message="example.spec.ts:4:5 has title" type="FAILURE">
-<![CDATA[  [chromium] › example.spec.ts:4:5 › has title ─────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toHaveTitle(expected)
-
-    Locator: locator(':root')
-    Expected pattern: /Tuskr/
-    Received string:  "Fast and reliable end-to-end testing for modern web apps | Playwright"
-    Call log:
-      - expect.toHaveTitle with timeout 5000ms
-      - waiting for locator(':root')
-      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
-      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
-      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
-      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
-      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
-      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
-      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
-      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
-      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
-      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
-      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
-      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
-      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
-      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
-      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
-      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
-
-
-       6 |
-       7 |   // Expect a title "to contain" a substring.
-    >  8 |   await expect(page).toHaveTitle(/Tuskr/);
-         |                      ^
-       9 | });
-      10 |
-      11 | // This will pass
-
-        at C:\Users\mudak\Downloads\playwright-main\playwright-main\basic\example.spec.ts:8:22
-]]>
-</failure>
-</testcase>
-<testcase name="get started link" classname="example.spec.ts" time="16.463">
-</testcase>
-</testsuite>
-<testsuite name="Get involved.spec.js" timestamp="2025-04-11T04:57:24.478Z" hostname="chromium" tests="3" failures="1" skipped="0" time="72.743" errors="0">
-<testcase name="validate Get involved  page" classname="Get involved.spec.js" time="29.999">
-<failure message="Get involved.spec.js:3:5 validate Get involved  page" type="FAILURE">
-<![CDATA[  [chromium] › Get involved.spec.js:3:5 › validate Get involved  page ──────────────────────────────
-
-    Test timeout of 30000ms exceeded.
-
-    Error: page.goto: Test timeout of 30000ms exceeded.
-    Call log:
-      - navigating to "https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p", waiting until "load"
-
-
-      2 |
-      3 | test('validate Get involved  page', async ({ page }) =>
-    > 4 |      {await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
-        |                  ^
-      5 |         await page.locator("//button[normalize-space()='Got it!']").click()
-      6 |
-      7 | const getinvolved = await page.locator("h2[class=' text-[28px] leading-[28px] lg:text-[58px] lg:leading-[58px] uppercase font-unbounded mb-3']").textContent()
-
-        at C:\Users\mudak\Downloads\playwright-main\playwright-main\basic\Get involved.spec.js:4:18
-]]>
-</failure>
-</testcase>
-<testcase name="validate  home page" classname="Get involved.spec.js" time="29.545">
-</testcase>
-<testcase name="bootstrap " classname="Get involved.spec.js" time="13.199">
-</testcase>
-</testsuite>
-<testsuite name="Homepage.spec.js" timestamp="2025-04-11T04:57:24.478Z" hostname="chromium" tests="1" failures="0" skipped="0" time="23.147" errors="0">
-<testcase name="validate  home page" classname="Homepage.spec.js" time="23.147">
-</testcase>
-</testsuite>
-<testsuite name="softstaking.spec.js" timestamp="2025-04-11T04:57:24.478Z" hostname="chromium" tests="2" failures="1" skipped="0" time="46.428" errors="0">
-<testcase name="validate softstaking page" classname="softstaking.spec.js" time="17.614">
+<testsuites id="" name="" tests="2" failures="1" skipped="0" errors="0" time="10.561718">
+<testsuite name="softstaking.spec.js" timestamp="2025-04-14T06:52:54.943Z" hostname="chromium" tests="2" failures="1" skipped="0" time="14.372" errors="0">
+<testcase name="validate softstaking page" classname="softstaking.spec.js" time="5.572">
 <failure message="softstaking.spec.js:3:5 validate softstaking page" type="FAILURE">
 <![CDATA[  [chromium] › softstaking.spec.js:3:5 › validate softstaking page ─────────────────────────────────
 
@@ -181,42 +18,26 @@ I am afterAll Hook
       21 |      test('validate  home222 page', async ({ page }) => {
 
         at C:\Users\mudak\Downloads\playwright-main\playwright-main\basic\softstaking.spec.js:18:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\softstaking-validate-softstaking-page-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\softstaking-validate-softstaking-page-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
 ]]>
 </failure>
 <system-out>
 <![CDATA[Unlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.
+
+[[ATTACHMENT|test-results\softstaking-validate-softstaking-page-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\softstaking-validate-softstaking-page-chromium\video.webm]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="validate  home222 page" classname="softstaking.spec.js" time="28.814">
-</testcase>
-</testsuite>
-<testsuite name="validation.spec.js" timestamp="2025-04-11T04:57:24.478Z" hostname="chromium" tests="1" failures="1" skipped="0" time="30.003" errors="0">
-<testcase name="validate text in home page" classname="validation.spec.js" time="30.003">
-<failure message="validation.spec.js:5:5 validate text in home page" type="FAILURE">
-<![CDATA[  [chromium] › validation.spec.js:5:5 › validate text in home page ─────────────────────────────────
-
-    Test timeout of 30000ms exceeded.
-
-    Error: apiRequestContext.get: Test timeout of 30000ms exceeded.
-    Call log:
-      - → GET https://qa.labs-v2.alkimi.org/staking/get-counts
-      -   user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.57 Safari/537.36
-      -   accept: */*
-      -   accept-encoding: gzip,deflate,br
-
-
-      20 |     //expect(connectbutton).toBeEnabled()
-      21 |     //calling Api
-    > 22 |     const apiResponse = await page.request.get('https://qa.labs-v2.alkimi.org/staking/get-counts');
-         |                                            ^
-      23 |     const data = await apiResponse.json();
-      24 |     console.log(data);
-      25 |     //////////(Total supply)
-
-        at C:\Users\mudak\Downloads\playwright-main\playwright-main\basic\validation.spec.js:22:44
-]]>
-</failure>
+<testcase name="validate  home222 page" classname="softstaking.spec.js" time="8.8">
 </testcase>
 </testsuite>
 </testsuites>

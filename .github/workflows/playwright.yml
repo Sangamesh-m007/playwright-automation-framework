@@ -11,5 +11,12 @@ jobs:
       - run: npx playwright install 
       - run: npx playwright test softstaking.spec.js
         continue-on-error: true
+          # Wait for screenshots/videos to finish saving
+      - name: Wait for artifacts to be written
+        run: sleep 5
+
+      # Zip results.xml and test-results folder
+      - name: Zip test results and artifacts
+        run: zip -r results.zip results.xml test-results || echo "No test-results folder, skipping"
       - run: npm install -g tuskr
       - run: tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')" --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json" 
