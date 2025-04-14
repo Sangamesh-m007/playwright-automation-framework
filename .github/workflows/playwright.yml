@@ -7,42 +7,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      # Setup Node.js
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # Install dependencies
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-      # Install Playwright browsers
-      - run: npx playwright install
+      - name: Install Playwright
+        run: npx playwright install
 
-      # Run Playwright tests
-      - run: npx playwright test softstaking.spec.js
-        continue-on-error: true  # Continue even if tests fail (so artifacts still upload)
+      - name: Run Playwright tests
+        run: npx playwright test basic/softstaking.spec.js --reporter=junit
+        continue-on-error: true
 
-      # Install Tuskr CLI
-      - run: npm install -g tuskr
+      - name: Install Tuskr CLI
+        run: npm install -g tuskr
 
-      # ✅ Collect screenshots, videos, and results.xml into a flat folder
       - name: Collect screenshots and videos
         run: |
-          mkdir -p test-artifacts
-          find test-results -type f \( -name "*.png" -o -name "*.webm" \) -exec cp {} test-artifacts/ \;
-          cp results.xml test-artifacts/
+          mkdir -p collected-artifacts
+          cp results.xml collected-artifacts/
+          find test-results -type f \( -name "*.png" -o -name "*.webm" \) -exec cp {} collected-artifacts/ \;
 
-      # ✅ Zip the contents
       - name: Create ZIP for Tuskr upload
-        run: |
-          cd test-artifacts
-          zip -r ../results.zip .
+        run: zip -j results.zip collected-artifacts/*
 
-      # ✅ Upload to Tuskr
-      - name: Push results to Tuskr
+      - name: Upload results to Tuskr
         run: |
           tuskr \
             --project=${{ secrets.PLAYWRIGHTPROJECT }} \
