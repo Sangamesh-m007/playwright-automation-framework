@@ -1,6 +1,167 @@
-<testsuites id="" name="" tests="2" failures="1" skipped="0" errors="0" time="11.968608">
-<testsuite name="softstaking.spec.js" timestamp="2025-04-15T10:02:08.584Z" hostname="chromium" tests="2" failures="1" skipped="0" time="16.761" errors="0">
-<testcase name="validate softstaking page" classname="softstaking.spec.js" time="7.449">
+<testsuites id="" name="" tests="18" failures="4" skipped="2" errors="0" time="27.813264999999998">
+<testsuite name="bootstramp.spec.js" timestamp="2025-04-15T12:00:44.744Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.451" errors="0">
+<testcase name="bootstrap multi" classname="bootstramp.spec.js" time="5.451">
+</testcase>
+</testsuite>
+<testsuite name="describe.spec.js" timestamp="2025-04-15T12:00:44.744Z" hostname="chromium" tests="4" failures="0" skipped="2" time="1.567" errors="0">
+<testcase name="Group all tests in one suite › Test1" classname="describe.spec.js" time="0.758">
+<system-out>
+<![CDATA[I am beforeAll Hook
+I am beforeEach Hook
+I am test1
+I am afterEach Hook
+I am afterAll Hook
+]]>
+</system-out>
+</testcase>
+<testcase name="Group all tests in one suite › Test2" classname="describe.spec.js" time="0.809">
+<system-out>
+<![CDATA[I am beforeAll Hook
+I am beforeEach Hook
+I am test2
+I am afterEach Hook
+I am afterAll Hook
+]]>
+</system-out>
+</testcase>
+<testcase name="Group all tests in one suite › Test3" classname="describe.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Group all tests in one suite › Test4" classname="describe.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="describe2.spec.js" timestamp="2025-04-15T12:00:44.744Z" hostname="chromium" tests="4" failures="0" skipped="0" time="1.402" errors="0">
+<testcase name="Main Test Suite › grouping1 › test1" classname="describe2.spec.js" time="0.793">
+<system-out>
+<![CDATA[I am beforeAll Hook
+I am beforeEach Hook
+I am test1
+I am afterEach Hook
+I am afterAll Hook
+]]>
+</system-out>
+</testcase>
+<testcase name="Main Test Suite › grouping1 › test2" classname="describe2.spec.js" time="0.2">
+<system-out>
+<![CDATA[I am beforeAll Hook
+I am beforeEach Hook
+I am test2
+I am afterEach Hook
+I am afterAll Hook
+]]>
+</system-out>
+</testcase>
+<testcase name="Main Test Suite › grouping2 › test3" classname="describe2.spec.js" time="0.204">
+<system-out>
+<![CDATA[I am beforeAll Hook
+I am beforeEach Hook
+I am test3
+I am afterEach Hook
+I am afterAll Hook
+]]>
+</system-out>
+</testcase>
+<testcase name="Main Test Suite › grouping2 › test4" classname="describe2.spec.js" time="0.205">
+<system-out>
+<![CDATA[I am beforeAll Hook
+I am beforeEach Hook
+I am test4
+I am afterEach Hook
+I am afterAll Hook
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="example.spec.ts" timestamp="2025-04-15T12:00:44.744Z" hostname="chromium" tests="2" failures="1" skipped="0" time="11.008" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="7.897">
+<failure message="example.spec.ts:4:5 has title" type="FAILURE">
+<![CDATA[  [chromium] › example.spec.ts:4:5 › has title ─────────────────────────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toHaveTitle(expected)
+
+    Locator: locator(':root')
+    Expected pattern: /Tuskr/
+    Received string:  "Fast and reliable end-to-end testing for modern web apps | Playwright"
+    Call log:
+      - expect.toHaveTitle with timeout 5000ms
+      - waiting for locator(':root')
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-rh="…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+      -   locator resolved to <html lang="en" dir="ltr" data-theme="light" data-has-…>…</html>
+      -   unexpected value "Fast and reliable end-to-end testing for modern web apps | Playwright"
+
+
+       6 |
+       7 |   // Expect a title "to contain" a substring.
+    >  8 |   await expect(page).toHaveTitle(/Tuskr/);
+         |                      ^
+       9 | });
+      10 |
+      11 | // This will pass
+
+        at C:\Users\mudak\Downloads\playwright-main\playwright-main\basic\example.spec.ts:8:22
+]]>
+</failure>
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="3.111">
+</testcase>
+</testsuite>
+<testsuite name="Get involved.spec.js" timestamp="2025-04-15T12:00:44.744Z" hostname="chromium" tests="3" failures="1" skipped="0" time="14.895" errors="0">
+<testcase name="validate Get involved  page" classname="Get involved.spec.js" time="4.539">
+<failure message="Get involved.spec.js:3:5 validate Get involved  page" type="FAILURE">
+<![CDATA[  [chromium] › Get involved.spec.js:3:5 › validate Get involved  page ──────────────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Get  INVOLVED"
+    Received: "Get INVOLVED"
+
+       6 |
+       7 | const getinvolved = await page.locator("h2[class=' text-[28px] leading-[28px] lg:text-[58px] lg:leading-[58px] uppercase font-unbounded mb-3']").textContent()
+    >  8 |     expect(getinvolved).toBe("Get  INVOLVED");
+         |                         ^
+       9 |     const getbelow_text = await page.locator("p[class='text-xs lg:text-sm text-gray-40 max-w-xs']").textContent()
+      10 |     expect(getbelow_text).toBe("With the $ADS ecosystem. Power our Ad Exchange with a few simple steps.");
+      11 |
+
+        at C:\Users\mudak\Downloads\playwright-main\playwright-main\basic\Get involved.spec.js:8:25
+]]>
+</failure>
+</testcase>
+<testcase name="validate  home page" classname="Get involved.spec.js" time="8.957">
+</testcase>
+<testcase name="bootstrap " classname="Get involved.spec.js" time="1.399">
+</testcase>
+</testsuite>
+<testsuite name="Homepage.spec.js" timestamp="2025-04-15T12:00:44.744Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.601" errors="0">
+<testcase name="validate  home page" classname="Homepage.spec.js" time="8.601">
+</testcase>
+</testsuite>
+<testsuite name="softstaking.spec.js" timestamp="2025-04-15T12:00:44.744Z" hostname="chromium" tests="2" failures="1" skipped="0" time="10.454" errors="0">
+<testcase name="validate softstaking page" classname="softstaking.spec.js" time="2.056">
 <failure message="softstaking.spec.js:3:5 validate softstaking page" type="FAILURE">
 <![CDATA[  [chromium] › softstaking.spec.js:3:5 › validate softstaking page ─────────────────────────────────
 
@@ -25,7 +186,65 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="validate  home222 page" classname="softstaking.spec.js" time="9.312">
+<testcase name="validate  home222 page" classname="softstaking.spec.js" time="8.398">
+</testcase>
+</testsuite>
+<testsuite name="validation.spec.js" timestamp="2025-04-15T12:00:44.744Z" hostname="chromium" tests="1" failures="1" skipped="0" time="14.872" errors="0">
+<testcase name="validate text in home page" classname="validation.spec.js" time="14.872">
+<failure message="validation.spec.js:5:5 validate text in home page" type="FAILURE">
+<![CDATA[  [chromium] › validation.spec.js:5:5 › validate text in home page ─────────────────────────────────
+
+    Error: expect(locator).toBeVisible()
+
+    Locator: locator('//a[normalize-space()=\'Join Now\']')
+    Expected: visible
+    Received: hidden
+    Call log:
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for locator('//a[normalize-space()=\'Join Now\']')
+
+
+      134 | expect(joincommunitytext).toBe("Don’t miss out! Discord is where the action happens.")
+      135 | const joinnow=await page.locator("//a[normalize-space()='Join Now']")
+    > 136 | expect(joinnow).toBeVisible()
+          |                 ^
+      137 | /*const support=await page.locator("//span[normalize-space()='Exclusive Updates']").innerText()
+      138 | await support.waitFor({ state: 'visible', timeout: 5000 });
+      139 | expect(support).toBe("Exclusive Updates");*/
+
+        at C:\Users\mudak\Downloads\playwright-main\playwright-main\basic\validation.spec.js:136:17
+]]>
+</failure>
+<system-out>
+<![CDATA[{
+  numberOfPublishers: [33m9091[39m,
+  stAdsTokenValue: [33m0.595392585291894[39m,
+  stakingPoolApy: [33m0[39m,
+  circulatingSupply: [33m236991084.18[39m,
+  totalSupply: [33m250000000[39m,
+  [32m'$adsPrice'[39m: [33m0.101302[39m,
+  transactionCount: [33m1738470220[39m,
+  snapshotNumber: [33m8537146[39m,
+  stAdsInPool: [33m0[39m,
+  impressionsCount: [33m0[39m,
+  totalNumberOfValidators: [33m1228[39m,
+  tvlValidators: [33m61400000[39m,
+  waitListNumber: [33m59[39m,
+  transactionCountsTillDate: [33m1738470313[39m,
+  quarterlyTransactionCount: [33m138161034[39m,
+  impressionsCountTillDate: [1mnull[22m,
+  quarterlyImpressionsCount: [1mnull[22m,
+  totalYearlyFeeRevenue: [33m48770.986[39m,
+  quarterlyFeeRevenue: [1mnull[22m,
+  totalValueLocked: [33m722002.67[39m
+}
+Total Supply250,000,000
+Circulating Supply236,991,084.18
+$ADS Price $0.101
+Unlock the Power of Transparency. Whether you’re a media buyer, publisher or a curious user, gain full visibility into ad-spends and their impact. Track metrics, analyse results, and ensure every impression is recorded.
+Unlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.
+]]>
+</system-out>
 </testcase>
 </testsuite>
 </testsuites>
