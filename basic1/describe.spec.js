@@ -21,20 +21,20 @@ test.afterAll(async () => {
 test.describe('Group all tests in one suite', () => {
 
     // Test Group 1
-    test.step('Test1', async ({ page }) => {
+    test('Test1', async ({ page }) => {
         console.log("I am test1")
     })
 
-    test.step('Test2', async ({ page }) => {
+    test('Test2', async ({ page }) => {
         console.log("I am test2")
     })
 
     // Test Group 2 
-    test.step('Test3', async ({ page }) => {
+    test.skip('Test3', async ({ page }) => {
         console.log("I am test3")
     })
 
-    test.step('Test4', async ({ page }) => {
+    test.skip('Test4', async ({ page }) => {
         console.log("I am test4")
     })
 })
