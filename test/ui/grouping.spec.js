@@ -17,18 +17,18 @@ test.describe('Group 1 - Get Involved Page', () => {
 });
 
 test.describe('Group 2 - Home Page', () => {
-  test('Validate home welcome text', async ({ page }) => {
+  test('Validate home welcome text in Home Page', async ({ page }) => {
     await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
     const welcome = await page.locator("//h1[normalize-space()='Welcome to Alkimi Labs']").textContent();
     console.log('Welcome:', welcome);
   });
 
-  test('Check subheading and Buy $ADS button', async ({ page }) => {
+  test('Check subheading and Buy $ADS button in Home Page ', async ({ page }) => {
     const btn = await page.locator("button[type='button']");
     console.log('Button text:', await btn.textContent());
   });
 
-  test('Skip reward link test', async ({ page }) => {
+  test('Skip reward link test in Home Page', async ({ page }) => {
     console.log("Skipping reward link check");
   });
 });
