@@ -1,11 +1,12 @@
 {
   "defaults": {
     "name": "{{classname}} > {{name}}",
-    "testSuite": "{{classname}}",
-    "testSuiteSection": "General",
-    "automationId": "{{name}}",
-    "customFields": {
-      "priority": "Low"
-    }
+    "testSuite": "Ads validation",
+    "testSuiteSection": "Section 1",
+    "automationId": "{{name}}"
+  },
+  "name ~ Home page ": {
+    "testSuite": "Home page",
+    "testSuiteSection": "Section 2"
   }
 }

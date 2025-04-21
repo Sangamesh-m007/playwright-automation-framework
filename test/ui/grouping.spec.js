@@ -33,23 +33,4 @@ test.describe('Group 2 - Home Page', () => {
   });
 });
 
-test.describe('Group 3 - Bootstrap Page', () => {
-  test('Open dropdown and click button', async ({ page }) => {
-    await page.goto("https://www.jquery-az.com/boots/demo.php?ex=63.0_2");
-    await page.locator("button[title='HTML, CSS']").click();
-  });
 
-  test('Select Angular checkbox if exists', async ({ page }) => {
-    const inputs = await page.$$("ul>li label input");
-    for (let input of inputs) {
-      const label = await input.evaluate(el => el.parentElement?.innerText || '');
-      if (label.includes('Angular')) {
-        await input.click();
-      }
-    }
-  });
-
-  test('Skip Java checkbox test', async ({ page }) => {
-    console.log("Skipping Java checkbox test");
-  });
-});
