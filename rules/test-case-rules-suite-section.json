@@ -1,12 +1,12 @@
 {
   "defaults": {
     "name": "{{classname}} > {{name}}",
-    "testSuite": "Ads validation",
+    "testSuite": "Suite 1",
     "testSuiteSection": "Section 1",
     "automationId": "{{name}}"
   },
   "name ~ Home page ": {
-    "testSuite": "Home page",
+    "testSuite": "Suite 2",
     "testSuiteSection": "Section 2"
   }
 }
