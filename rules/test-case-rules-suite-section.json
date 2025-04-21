@@ -1,32 +1,12 @@
 {
   "defaults": {
     "name": "{{classname}} > {{name}}",
-    "testSuite": "{{groupName}}",  
-    "testSuiteSection": "General", 
-    "automationId": "{{name}}",
-    "customFields": {
-      "priority": "Low"
-    }
-  },
-  "Group 1 - Get Involved Page": {
-    "testSuite": "Get Involved Page",
+    "testSuite": "Suite 1",
     "testSuiteSection": "Section 1",
-    "customFields": {
-      "priority": "Medium"
-    }
+    "automationId": "{{name}}"
   },
-  "Group 2 - Home Page": {
-    "testSuite": "Home Page",
-    "testSuiteSection": "Section 2",
-    "customFields": {
-      "priority": "High"
-    }
-  },
-  "Group 3 - Bootstrap Page": {
-    "testSuite": "Bootstrap Page",
-    "testSuiteSection": "Section 3",
-    "customFields": {
-      "priority": "Low"
-    }
+  "name ~ link": {
+    "testSuite": "Suite 2",
+    "testSuiteSection": "Section 2"
   }
 }
