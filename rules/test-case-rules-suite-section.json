@@ -5,7 +5,7 @@
     "testSuiteSection": "Section 1",
     "automationId": "{{name}}"
   },
-  "name ~ Home Page": {
+  "name ~ link": {
     "testSuite": "Suite 2",
     "testSuiteSection": "Section 2"
   }
