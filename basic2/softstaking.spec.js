@@ -28,7 +28,7 @@ const soft = await page.locator("//p[normalize-space()='Soft Staking']").textCon
         expect(belowheading).toBe("Where $ADS holders innovate, earn rewards and shape digital advertising's future.");
         const button = await page.locator("button[type='button']")
         expect(button).toBeVisible()
-        const buttontext = await button.textContent()
+        const buttontext = await button.textContent();
         expect(buttontext).toBe("Buy $ADS")
         const rewards = await page.locator("a[class='inline-flex gap-1 items-center justify-center whitespace-nowrap rounded-button ring-offset-background focus-visible:outline-none transition-all disabled:pointer-events-none disabled:opacity-20 underline underline-offset-2 text-gray-40 active:text-white hover:text-white lg:text-sm px-[48px] py-[10px] text-sm']").textContent()
         expect(rewards).toBe("Estimate Rewards");
