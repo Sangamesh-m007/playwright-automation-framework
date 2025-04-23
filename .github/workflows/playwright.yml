@@ -12,4 +12,4 @@ jobs:
       - run: npx playwright test softstaking.spec.js 
         continue-on-error: true 
       - run: npm install -g tuskr
-      - run: IST_TIMESTAMP=$(TZ='Asia/Kolkata' date +'%Y-%m-%d_%H-%M-%S') && tuskr --project="Labs" --test-run-name="Basic playwright test TIMESTAMP=$IST_TIMESTAMP" --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json"
+      - run: IST_TIMESTAMP=$(TZ='Asia/Kolkata' date +'%Y-%m-%d_%H-%M-%S') && tuskr --project=${{ secrets.PLAYWRIGHTPROJECT }} --test-run-name="Basic playwright test TIMESTAMP=$IST_TIMESTAMP" --api-token=${{ secrets.PLAYWRIGHTAPITOKEN }} --file="results.xml" --test-case-rules="rules/test-case-rules-basic.json"

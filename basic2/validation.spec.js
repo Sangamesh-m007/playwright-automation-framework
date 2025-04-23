@@ -2,10 +2,16 @@
 
 import { test, expect } from '@playwright/test';
 ///HOME PAGE(1)
-test('validate text in home page', async ({ page }) => {
-    await page.waitForTimeout(5000)
+test.describe('home page validation',()=>
+{
+  test.beforeEach(async ({ page }) => {
     await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
-    await page.locator("//button[normalize-space()='Got it!']").click()
+    await page.locator("//button[normalize-space()='Got it!']").click();
+  });
+  test('validate text in home page', async ({ page }) => {
+    await page.waitForTimeout(5000)
+    //await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
+    //await page.locator("//button[normalize-space()='Got it!']").click()
     const welcomeText = await page.locator("//h1[normalize-space()='Welcome to Alkimi Labs']").textContent();
     expect(welcomeText).toBe('Welcome to Alkimi Labs');
     const belowheading = await page.locator("p[class='lg:text-sm text-gray-40 text-sm md:text-lg max-w-[400px] lg:max-w-[450px] mx-auto transition-transform duration-700 will-change-transform translate-y-0']").textContent();
@@ -18,7 +24,17 @@ test('validate text in home page', async ({ page }) => {
     expect(rewards).toBe("Estimate Rewards");
     //const connectbutton=await page.locator("//button[@fdprocessedid='zh75yj']")
     //expect(connectbutton).toBeEnabled()
+  })
+})
     //calling Api
+    test.describe('calling API',()=>
+      {
+        test.beforeEach(async ({ page }) => {
+          await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
+          await page.locator("//button[normalize-space()='Got it!']").click();
+        })
+        test("matching Api values",async({page})=>
+        {
     const apiResponse = await page.request.get('https://qa.labs-v2.alkimi.org/staking/get-counts');
     const data = await apiResponse.json();
     console.log(data);
@@ -53,6 +69,16 @@ test('validate text in home page', async ({ page }) => {
     const value_withouttext4 = await uidynamicvalues4.replace(/[^0-9.]/g, '')
     const Actualvalue2 = parseFloat(value_withouttext4)
     expect(Actualvalue2).toBeCloseTo(dynamic4);
+  })
+})
+test.describe('validating explorer',()=>
+  {
+    test.beforeEach(async ({ page }) => {
+      await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
+      await page.locator("//button[normalize-space()='Got it!']").click();
+    })
+    test("validating ADS explorer",async({page})=>
+    {
     ///ADDS EXPLORER(3)
     const adsExplore = await page.locator("//p[normalize-space()='Ads Explorer']").textContent()
     expect(adsExplore).toBe("Ads Explorer");
@@ -66,7 +92,10 @@ test('validate text in home page', async ({ page }) => {
     const text = await page.locator('//p[@class="text-lg lg:text-2xl mb-5"]').first().innerText();
     console.log(text);
     expect(text).toBe("Unlock the Power of Transparency. Whether you’re a media buyer, publisher or a curious user, gain full visibility into ad-spends and their impact. Track metrics, analyse results, and ensure every impression is recorded.");
+  })
     ///SOFT STAKING(4)
+    test("validating softstaking",async({page})=>
+      {
     const soft = await page.locator("//p[normalize-space()='Soft Staking']").textContent()
     expect(soft).toBe("Soft Staking");
     const stakeexplore = await page.locator("(//a[@href='/staking'][normalize-space()='Explore'])[1]")
@@ -79,8 +108,20 @@ test('validate text in home page', async ({ page }) => {
     console.log(softtext);
     expect(softtext).toBe("Unlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.");
     const getinvolved = await page.locator("h2[class=' text-[28px] leading-[28px] lg:text-[58px] lg:leading-[58px] uppercase font-unbounded mb-3']").textContent()
+  })
+})
+  test.describe('validating get involved',()=>
+    {
+      test.beforeEach(async ({ page }) => {
+        await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
+        await page.locator("//button[normalize-space()='Got it!']").click();
+      })
+      test("check Get involved ",async({page})=>
+      {
     //GETINVOLVED
-    expect(getinvolved).toBe("Get  INVOLVED");
+    const getinvolved = await page.locator("h2[class=' text-[28px] leading-[28px] lg:text-[58px] lg:leading-[58px] uppercase font-unbounded mb-3']").textContent()
+    //expect(getinvolved).toBe("Get  INVOLVED");
+    expect(getinvolved.replace(/\s+/g, ' ').trim()).toBe("Get INVOLVED");
     const getbelow_text = await page.locator("p[class='text-xs lg:text-sm text-gray-40 max-w-xs']").textContent()
     expect(getbelow_text).toBe("With the $ADS ecosystem. Power our Ad Exchange with a few simple steps.");
 
@@ -119,7 +160,9 @@ test('validate text in home page', async ({ page }) => {
     expect(softstakingprogram).toBe("Got some stADS from providing liquidity on our pool on balancer? Soft-stake them to earn rewards.")
     const video6button = await page.locator("//a[normalize-space()='Join the Pool']")
     expect(video6button).toBeVisible()
-
+  })
+  test("validating become validator ",async({page})=>
+    {
 ///BECOME A VALIDATROR
 const becomeValidatorHeading=await page.locator("//p[normalize-space()='Become a Validator']").textContent()
 expect(becomeValidatorHeading).toBe("Become a Validator")
@@ -137,6 +180,7 @@ expect(joinnow).toBeVisible()
 /*const support=await page.locator("//span[normalize-space()='Exclusive Updates']").innerText()
 await support.waitFor({ state: 'visible', timeout: 5000 });
 expect(support).toBe("Exclusive Updates");*/
+})
 
 
 
