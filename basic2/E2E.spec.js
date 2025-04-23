@@ -89,7 +89,7 @@ test.describe(' Group 3-validating explorer', () => {
 
   test("validating softstaking", async ({ page }) => {
     const soft = await page.locator("//p[normalize-space()='Soft Staking']").textContent();
-    expect(soft).toBe("Soft Staking");
+    expect(soft).toBe("Soft Staking")
 
     const stakeexplore = await page.locator("(//a[@href='/staking'][normalize-space()='Explore'])[1]");
     expect(stakeexplore).toBeVisible();
