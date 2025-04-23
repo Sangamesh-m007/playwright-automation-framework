@@ -10,7 +10,7 @@ test.describe(' Group1 -home page validation', () => {
   test('validate text in home page', async ({ page }) => {
     await page.waitForTimeout(5000);
     const welcomeText = await page.locator("//h1[normalize-space()='Welcome to Alkimi Labs']").textContent();
-    expect(welcomeText).toBe('Welcom to Alkimi Labs');
+    expect(welcomeText).toBe('Welcome to Alkimi Labs');
     
     const belowheading = await page.locator("p[class='lg:text-sm text-gray-40 text-sm md:text-lg max-w-[400px] lg:max-w-[450px] mx-auto transition-transform duration-700 will-change-transform translate-y-0']").textContent();
     expect(belowheading).toBe("Where $ADS holders innovate, earn rewards and shape digital advertising's future.");
@@ -45,6 +45,16 @@ test.describe('Group 2-calling API', () => {
     const uidynamicvalues2 = await page.locator("body > main:nth-child(3) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(3)").textContent();
     const value_withouttext2 = uidynamicvalues2.replace(/[^0-9.]/g, '');
     expect(parseFloat(value_withouttext2)).toBe(dynamic2);
+
+    //////////////(Balancer)
+ const dynamic3 = data.totalValueLocked;
+   const dynamicElement3 = await page.locator("body > main:nth-child(3) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(5)");
+   const uidynamicvalues3 = await dynamicElement3.textContent();
+   console.log(uidynamicvalues3);
+   const value_withouttext3 = uidynamicvalues3.replace(/[^0-9.]/g, '');//we use this to keep only numbers and decimals
+   const Actualvalue= parseFloat(value_withouttext3);
+   console.log(Actualvalue);
+   expect(Actualvalue).toBeCloseTo(dynamic3)
 
     const dynamic4 = data.$adsPrice;
     const uidynamicvalues4 = await page.locator("body > main:nth-child(3) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2)").textContent();
