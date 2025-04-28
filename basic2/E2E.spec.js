@@ -144,7 +144,7 @@ test.describe(' Group 4-validating get involved alkimi', () => {
     expect(softstakingprogram).toBe("Got some stADS from providing liquidity on our pool on balancer? Soft-stake them to earn rewards.");
 
     const video6button = await page.locator("//a[normalize-space()='Join the Pool']");
-    expect(video6button).toBeVisible()
+    expect(video6button).toBeVisible();
   });
 
   test("validating become validator", async ({ page }) => {
