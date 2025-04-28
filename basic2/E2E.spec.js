@@ -165,7 +165,7 @@ test.describe(' Group 4-validating get involved alkimi', () => {
 
     const joinnow = await page.locator("//a[normalize-space()='Join Now']");
     expect(joinnow).toBeVisible();
-  });
+  })
 });
 
 
