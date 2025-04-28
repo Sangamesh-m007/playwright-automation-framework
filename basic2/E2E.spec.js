@@ -93,7 +93,7 @@ test.describe(' Group 3-validating explorer alkimi', () => {
     const softtext = await page.getByText("Unlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.").innerText();
     expect(softtext).toBe("Unlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.");
   });
-});
+})
 
 /// GET INVOLVED SECTION (4)
 test.describe(' Group 4-validating get involved alkimi', () => {
