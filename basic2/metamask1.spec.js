@@ -1,7 +1,10 @@
 import { test, expect } from '../fixtures.js';
 import { metamask } from '../Pages/metamask.js';
+test.describe("metamask validation",()=>
+{
 
-test('Launch MetaMask Extension', async ({ page, extensionId }) => {
+
+test('Launch MetaMask Extension link', async ({ page, extensionId }) => {
   //await page.goto(`chrome-extension://${aklimiExtensionId}/home.html`);
   //const aklimiLabsPage = page;
   await page.goto(`chrome-extension://${extensionId}/home.html`);
@@ -51,3 +54,4 @@ test('Launch MetaMask Extension', async ({ page, extensionId }) => {
 
   
 });
+})

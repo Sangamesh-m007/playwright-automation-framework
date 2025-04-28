@@ -1,17 +1,20 @@
 import { test, expect } from '@playwright/test';
+ 
+// Global setup for all tests
+test.beforeEach(async ({ page }) => {
+  await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
+  const gotItButton = page.locator("//button[normalize-space()='Got it!']").click();
+  
+   
+});   
 
 /// HOME PAGE (1)
-test.describe(' Group1 -home page validation', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
-    await page.locator("//button[normalize-space()='Got it!']").click();
-  });
-
+test.describe(' Group1 -home page validation alkimi', () => {
   test('validate text in home page', async ({ page }) => {
     await page.waitForTimeout(5000);
     const welcomeText = await page.locator("//h1[normalize-space()='Welcome to Alkimi Labs']").textContent();
     expect(welcomeText).toBe('Welcome to Alkimi Labs');
-    
+
     const belowheading = await page.locator("p[class='lg:text-sm text-gray-40 text-sm md:text-lg max-w-[400px] lg:max-w-[450px] mx-auto transition-transform duration-700 will-change-transform translate-y-0']").textContent();
     expect(belowheading).toBe("Where $ADS holders innovate, earn rewards and shape digital advertising's future.");
 
@@ -19,18 +22,14 @@ test.describe(' Group1 -home page validation', () => {
     expect(button).toBeVisible();
     const buttontext = await button.textContent();
     expect(buttontext).toBe("Buy $ADS");
+
     const rewards = await page.locator("a[class='inline-flex gap-1 items-center justify-center whitespace-nowrap rounded-button ring-offset-background focus-visible:outline-none transition-all disabled:pointer-events-none disabled:opacity-20 underline underline-offset-2 text-gray-40 active:text-white hover:text-white lg:text-sm px-[48px] py-[10px] text-sm']").textContent();
     expect(rewards).toBe("Estimate Rewards");
   });
 });
 
 /// CALLING API (2)
-test.describe('Group 2-calling API', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
-    await page.locator("//button[normalize-space()='Got it!']").click();
-  });
-
+test.describe('Group 2-calling API alkimi', () => {
   test("matching Api values", async ({ page }) => {
     const apiResponse = await page.request.get('https://qa.labs-v2.alkimi.org/staking/get-counts');
     const data = await apiResponse.json();
@@ -46,15 +45,12 @@ test.describe('Group 2-calling API', () => {
     const value_withouttext2 = uidynamicvalues2.replace(/[^0-9.]/g, '');
     expect(parseFloat(value_withouttext2)).toBe(dynamic2);
 
-    //////////////(Balancer)
- const dynamic3 = data.totalValueLocked;
-   const dynamicElement3 = await page.locator("body > main:nth-child(3) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(5)");
-   const uidynamicvalues3 = await dynamicElement3.textContent();
-   console.log(uidynamicvalues3);
-   const value_withouttext3 = uidynamicvalues3.replace(/[^0-9.]/g, '');//we use this to keep only numbers and decimals
-   const Actualvalue= parseFloat(value_withouttext3);
-   console.log(Actualvalue);
-   expect(Actualvalue).toBeCloseTo(dynamic3)
+    const dynamic3 = data.totalValueLocked;
+    const dynamicElement3 = await page.locator("body > main:nth-child(3) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(5)");
+    const uidynamicvalues3 = await dynamicElement3.textContent();
+    const value_withouttext3 = uidynamicvalues3.replace(/[^0-9.]/g, '');
+    const Actualvalue = parseFloat(value_withouttext3);
+    expect(Actualvalue).toBeCloseTo(dynamic3);
 
     const dynamic4 = data.$adsPrice;
     const uidynamicvalues4 = await page.locator("body > main:nth-child(3) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2)").textContent();
@@ -65,12 +61,7 @@ test.describe('Group 2-calling API', () => {
 });
 
 /// VALIDATING EXPLORER (3)
-test.describe(' Group 3-validating explorer', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
-    await page.locator("//button[normalize-space()='Got it!']").click();
-  });
-
+test.describe(' Group 3-validating explorer alkimi', () => {
   test("validating ADS explorer", async ({ page }) => {
     const adsExplore = await page.locator("//p[normalize-space()='Ads Explorer']").textContent();
     expect(adsExplore).toBe("Ads Explorer");
@@ -87,9 +78,9 @@ test.describe(' Group 3-validating explorer', () => {
     expect(text).toBe("Unlock the Power of Transparency. Whether you’re a media buyer, publisher or a curious user, gain full visibility into ad-spends and their impact. Track metrics, analyse results, and ensure every impression is recorded.");
   });
 
-  test("validating softstaking", async ({ page }) => {
+  test("validating softstaking ", async ({ page }) => {
     const soft = await page.locator("//p[normalize-space()='Soft Staking']").textContent();
-    expect(soft).toBe("Soft Staking")
+    expect(soft).toBe("Soft Staking");
 
     const stakeexplore = await page.locator("(//a[@href='/staking'][normalize-space()='Explore'])[1]");
     expect(stakeexplore).toBeVisible();
@@ -105,16 +96,11 @@ test.describe(' Group 3-validating explorer', () => {
 });
 
 /// GET INVOLVED SECTION (4)
-test.describe(' Group 4-validating get involved', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
-    await page.locator("//button[normalize-space()='Got it!']").click();
-  });
-
+test.describe(' Group 4-validating get involved alkimi', () => {
   test("check Get involved ", async ({ page }) => {
     const getinvolved = await page.locator("h2[class=' text-[28px] leading-[28px] lg:text-[58px] lg:leading-[58px] uppercase font-unbounded mb-3']").textContent();
-    //expect(getinvolved).toBe("Get  INVOLVED");
     expect(getinvolved.replace(/\s+/g, ' ').trim()).toBe("Get INVOLVED");
+
     const getbelow_text = await page.locator("p[class='text-xs lg:text-sm text-gray-40 max-w-xs']").textContent();
     expect(getbelow_text).toBe("With the $ADS ecosystem. Power our Ad Exchange with a few simple steps.");
 
@@ -181,3 +167,42 @@ test.describe(' Group 4-validating get involved', () => {
     expect(joinnow).toBeVisible();
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//if (await gotItButton.isVisible()) {
+    //await gotItButton.click();

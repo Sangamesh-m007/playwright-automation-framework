@@ -1,12 +1,8 @@
 {
-  "defaults": {
-    "name": "{{classname}} > {{name}}",
-    "testSuite": "Suite 1",
-    "testSuiteSection": "Section 1",
-    "automationId": "{{name}}"
-  },
-  "name ~ link": {
-    "testSuite": "Suite 2",
-    "testSuiteSection": "Section 2"
+  "always": {
+  "name": "{{split name '›' 1}}",
+  "testSuite": "Suite 1",
+  "testSuiteSection": "{{split name '›' 0}}",
+  "automationId": "{{name}}"
   }
-}
+  }
