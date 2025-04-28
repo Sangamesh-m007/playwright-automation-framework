@@ -85,7 +85,7 @@ test.describe(' Group 3-validating explorer alkimi', () => {
     const stakeexplore = await page.locator("(//a[@href='/staking'][normalize-space()='Explore'])[1]");
     expect(stakeexplore).toBeVisible();
     const stakeexplorebutton = await stakeexplore.textContent();
-    expect(stakeexplorebutton).toBe("Explore");
+    expect(stakeexplorebutton).toBe("Explore")
 
     const video2 = await page.locator("(//video)[2]");
     expect(video2).toBeVisible()
