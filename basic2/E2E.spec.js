@@ -24,7 +24,7 @@ test.describe(' Group1 -home page validation alkimi', () => {
     expect(buttontext).toBe("Buy $ADS");
 
     const rewards = await page.locator("a[class='inline-flex gap-1 items-center justify-center whitespace-nowrap rounded-button ring-offset-background focus-visible:outline-none transition-all disabled:pointer-events-none disabled:opacity-20 underline underline-offset-2 text-gray-40 active:text-white hover:text-white lg:text-sm px-[48px] py-[10px] text-sm']").textContent();
-    expect(rewards).toBe("Estimate Rewards");
+    expect(rewards).toBe("stimate Rewards");
   });
 });
 
