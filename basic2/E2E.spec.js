@@ -164,7 +164,7 @@ test.describe(' Group 4-validating get involved alkimi', () => {
     expect(joincommunitytext).toBe("Don’t miss out! Discord is where the action happens.");
 
     const joinnow = await page.locator("//a[normalize-space()='Join Now']");
-    expect(joinnow).toBeVisible();
+    expect(joinnow).toBeVisible()
   });
 });
 
