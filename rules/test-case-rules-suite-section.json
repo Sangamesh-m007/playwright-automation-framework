@@ -1,8 +1,8 @@
 {
   "always": {
-    "name": "{{split name '›' 1 | trim}}",
-    "testSuite": "Suite 1",
-    "testSuiteSection": "{{split name '›' 0 | trim}}",
-    "automationId": "{{name}}"
+  "name": "{{split name '›' 1}}",
+  "testSuite": "Regression",
+  "testSuiteSection": "{{split name '›' 0}}",
+  "automationId": "{{name}}"
   }
-}
+  }

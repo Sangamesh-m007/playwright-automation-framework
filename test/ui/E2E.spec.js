@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
 });   
 
 /// HOME PAGE (1)
-test.describe(' Group1 -home page validation alkimi', () => {
+test.describe('ADS Validation', () => {
   test('validate text in home page', async ({ page }) => {
     await page.waitForTimeout(5000);
     const welcomeText = await page.locator("//h1[normalize-space()='Welcome to Alkimi Labs']").textContent();
@@ -29,7 +29,7 @@ test.describe(' Group1 -home page validation alkimi', () => {
 });
 
 /// CALLING API (2)
-test.describe('Group 2-calling API alkimi', () => {
+test.describe('Frequency capping', () => {
   test("matching Api values", async ({ page }) => {
     const apiResponse = await page.request.get('https://qa.labs-v2.alkimi.org/staking/get-counts');
     const data = await apiResponse.json();
@@ -61,7 +61,7 @@ test.describe('Group 2-calling API alkimi', () => {
 });
 
 /// VALIDATING EXPLORER (3)
-test.describe(' Group 3-validating explorer alkimi', () => {
+test.describe('Alkimi Labs validation', () => {
   test("validating ADS explorer", async ({ page }) => {
     const adsExplore = await page.locator("//p[normalize-space()='Ads Explorer']").textContent();
     expect(adsExplore).toBe("Ads Explorer");
