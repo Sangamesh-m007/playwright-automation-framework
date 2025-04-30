@@ -56,7 +56,7 @@ test.describe('Group 2-calling API alkimi', () => {
     const uidynamicvalues4 = await page.locator("body > main:nth-child(3) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2)").textContent();
     const value_withouttext4 = uidynamicvalues4.replace(/[^0-9.]/g, '');
     const Actualvalue2 = parseFloat(value_withouttext4);
-    expect(Actualvalue2).toBeCloseTo(dynamic4);
+    expect(Actualvalue2).toBeCloseTo(dynamic4)
   });
 });
 
