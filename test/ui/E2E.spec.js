@@ -33,7 +33,7 @@ test.describe('Frequency capping', () => {
   test("matching Api values", async ({ page }) => {
     const apiResponse = await page.request.get('https://qa.labs-v2.alkimi.org/staking/get-counts');
     const data = await apiResponse.json();
-    console.log(data);
+    console.log(data)
 
     const dynamic1 = data.totalSupply;
     const uidynamicvalues1 = await page.locator('body > main:nth-child(3) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(4)').textContent();
