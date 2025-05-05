@@ -1,12 +1,14 @@
 {
   "always": {
   "name": "{{split name '›' 1}}",
-  "testSuite": "Regression",
+  "testSuite": "Suite 1",
   "testSuiteSection": "{{split name '›' 0}}",
-  "automationId": "{{name}}"
+  "automationId": "{{name}}",
+  "testCaseType": "{{type}}"
   }
   }
 
+ 
 
   
   
