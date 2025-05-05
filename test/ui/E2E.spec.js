@@ -9,7 +9,10 @@ test.beforeEach(async ({ page }) => {
 });   
 
 /// HOME PAGE (1)
+
 test.describe('ADS Validation', () => {
+test.describe(' Group1 -home page validation alkimi', () => {
+
   test('validate text in home page', async ({ page }) => {
     await page.waitForTimeout(5000);
     const welcomeText = await page.locator("//h1[normalize-space()='Welcome to Alkimi Labs']").textContent();
@@ -27,9 +30,14 @@ test.describe('ADS Validation', () => {
     expect(rewards).toBe("stimate Rewards");
   });
 });
+})
 
 /// CALLING API (2)
+
 test.describe('Frequency capping', () => {
+
+test.describe('Group 2-calling API alkimi', () => {
+
   test("matching Api values", async ({ page }) => {
     const apiResponse = await page.request.get('https://qa.labs-v2.alkimi.org/staking/get-counts');
     const data = await apiResponse.json();
@@ -59,9 +67,15 @@ test.describe('Frequency capping', () => {
     expect(Actualvalue2).toBeCloseTo(dynamic4)
   });
 });
+})
+
 
 /// VALIDATING EXPLORER (3)
+
 test.describe('Alkimi Labs validation', () => {
+
+test.describe(' Group 3-validating explorer alkimi', () => {
+
   test("validating ADS explorer", async ({ page }) => {
     const adsExplore = await page.locator("//p[normalize-space()='Ads Explorer']").textContent();
     expect(adsExplore).toBe("Ads Explorer");
@@ -93,6 +107,7 @@ test.describe('Alkimi Labs validation', () => {
     const softtext = await page.getByText("Unlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.").innerText();
     expect(softtext).toBe("Unlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.");
   });
+})
 })
 
 /// GET INVOLVED SECTION (4)
