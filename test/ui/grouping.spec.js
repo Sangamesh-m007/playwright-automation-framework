@@ -14,7 +14,7 @@ test.describe('Group 1 - Get Involved Page', () => {
   test('Check video and description', async ({ page }) => {
     console.log("This test is skipped");
   });
-});
+})
 
 test.describe('Group 2 - Home Page', () => {
   test('Validate home welcome text in Home Page', async ({ page }) => {
