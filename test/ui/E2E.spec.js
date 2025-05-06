@@ -144,7 +144,7 @@ test.describe(' Group 4-validating get involved alkimi', () => {
     expect(video5).toBeVisible();
 
     const validateHeading = await page.locator("//h3[normalize-space()='Validate']").textContent();
-    expect(validateHeading).toBe("Validate");
+    expect(validateHeading).toBe("Validate")
 
     const video5text = await page.getByText("Sign up to become a validator and earn rewards. Note: Minimum 50K $ADS required.").innerText();
     expect(video5text).toBe("Sign up to become a validator and earn rewards. Note: Minimum 50K $ADS required.");
