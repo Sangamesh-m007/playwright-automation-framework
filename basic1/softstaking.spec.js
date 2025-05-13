@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('validate softstaking page', async ({ page }) =>
+test('validate softstaking page  @Regression', async ({ page }) =>
      {
         await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
     await page.locator("//button[normalize-space()='Got it!']").click()
@@ -18,7 +18,7 @@ const soft = await page.locator("//p[normalize-space()='Soft Staking']").textCon
     expect(softtext).toBe("unlock effortless rewards with our Soft Staking Pool—flexible, straightforward, and designed to work for you.");
     
      })
-     test('validate  home222 page', async ({ page }) => {
+     test('validate  home222 page  @Smoke', async ({ page }) => {
         await page.waitForTimeout(5000)
         await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
         await page.locator("//button[normalize-space()='Got it!']").click()
