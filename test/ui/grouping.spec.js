@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 
-test.describe('Group 1 - Get Involved Page @Regression  ', () => {
-  test('Validate page title and cookie button ', async ({ page }) => {
+test.describe('Group 1 - Get Involved Page', () => {
+  test('Validate page title and cookie button @Regression', async ({ page }) => {
     await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
     await page.locator("//button[normalize-space()='Got it!']").click();
   });
@@ -17,7 +17,7 @@ test.describe('Group 1 - Get Involved Page @Regression  ', () => {
 })
 
 test.describe('Group 2 - Home Page ', () => {
-  test('Validate home welcome text in Home Page', async ({ page }) => {
+  test('Validate home welcome text in Home Page @Regression', async ({ page }) => {
     await page.goto('https://qa-alkimi-labs.vercel.app/?_vercel_share=RPRHjy6nR3K52URLJHrLThX4kYoyv29p');
     const welcome = await page.locator("//h1[normalize-space()='Welcome to Alkimi Labs']").textContent();
     console.log('Welcome:', welcome);
