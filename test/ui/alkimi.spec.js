@@ -20,7 +20,7 @@ test.describe('Group 1 - Get Involved Page', () => {
 test.describe('Alkimi DSP Validation', () => {
 
  test('Test 1 - Run only in Chromium', async ({ page, browserName }) => {
-    if (browserName !== 'chromium')test.skip();
+    if (browserName !== 'chromium')test.skip()
     {
 
     await page.goto("https://qa.alkimi-dsp.com/user/login");
