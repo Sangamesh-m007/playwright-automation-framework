@@ -36,9 +36,9 @@ test.describe(' Group1 -home page validation alkimi', () => {
 
 test.describe('Frequency capping', () => {
 
-test.describe('Group 2-calling API alkimi', () => {
+test.describe('Group 2-calling API alkimi ', () => {
 
-  test("matching Api values", async ({ page }) => {
+  test("matching Api values @Regression", async ({ page }) => {
     const apiResponse = await page.request.get('https://qa.labs-v2.alkimi.org/staking/get-counts');
     const data = await apiResponse.json();
     console.log(data)
@@ -76,7 +76,7 @@ test.describe('Alkimi Labs validation', () => {
 
 test.describe(' Group 3-validating explorer alkimi', () => {
 
-  test("validating ADS explorer", async ({ page }) => {
+  test("validating ADS explorer @Regression", async ({ page }) => {
     const adsExplore = await page.locator("//p[normalize-space()='Ads Explorer']").textContent();
     expect(adsExplore).toBe("Ads Explorer");
 
@@ -92,7 +92,7 @@ test.describe(' Group 3-validating explorer alkimi', () => {
     expect(text).toBe("Unlock the Power of Transparency. Whether you’re a media buyer, publisher or a curious user, gain full visibility into ad-spends and their impact. Track metrics, analyse results, and ensure every impression is recorded.");
   });
 
-  test("validating softstaking ", async ({ page }) => {
+  test("validating softstaking @Regression", async ({ page }) => {
     const soft = await page.locator("//p[normalize-space()='Soft Staking']").textContent();
     expect(soft).toBe("Soft Staking");
 
@@ -112,7 +112,7 @@ test.describe(' Group 3-validating explorer alkimi', () => {
 
 /// GET INVOLVED SECTION (4)
 test.describe(' Group 4-validating get involved alkimi', () => {
-  test("check Get involved ", async ({ page }) => {
+  test("check Get involved @Regression", async ({ page }) => {
     const getinvolved = await page.locator("h2[class=' text-[28px] leading-[28px] lg:text-[58px] lg:leading-[58px] uppercase font-unbounded mb-3']").textContent();
     expect(getinvolved.replace(/\s+/g, ' ').trim()).toBe("Get INVOLVED");
 
@@ -162,7 +162,7 @@ test.describe(' Group 4-validating get involved alkimi', () => {
     expect(video6button).toBeVisible();
   });
 
-  test("validating become validator", async ({ page }) => {
+  test("validating become validator @Regression", async ({ page }) => {
     const becomeValidatorHeading = await page.locator("//p[normalize-space()='Become a Validator']").textContent();
     expect(becomeValidatorHeading).toBe("Become a Validator");
 
