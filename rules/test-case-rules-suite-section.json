@@ -1,7 +1,7 @@
 {
   "always": {
-  "name": "{{split name '›' 1}}",
-  "testSuite": "Suite 1",
+  "name": "{{split name '›' 0}}",
+  "testSuite": "{split name '@' 1}}",
   "testSuiteSection": "{{split name '›' 0}}",
   "automationId": "{{name}}",
   "testCaseType": "{{type}}"
