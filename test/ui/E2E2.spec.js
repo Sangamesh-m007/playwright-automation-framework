@@ -73,7 +73,7 @@ test.describe('Frequency capping', () => {
 
 test.describe('Alkimi Labs validation', () => {
 
-  test("validating ADS explorer @Regression", async ({ page }) => {
+  test("validating ADS explorer @Smoke", async ({ page }) => {
     const adsExplore = await page.locator("//p[normalize-space()='Ads Explorer']").textContent();
     expect(adsExplore).toBe("Ads Explorer");
 
