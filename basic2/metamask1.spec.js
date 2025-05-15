@@ -38,18 +38,18 @@ test('Launch MetaMask Extension link', async ({ page, extensionId }) => {
 
   //await Tometamask.close();
   console.log("MetaMask setup completed successfully!");
-  let alkimiPage;
+ /* let alkimiPage;
   for (const p of context.pages()) {
     if (p.url().includes("chrome-extension://") && !p.url().includes(extensionId)) {
       alkimiPage = p;
       break;
     }
-  }
+  }*/
 
-  await alkimiPage.bringToFront();
-  console.log("Switched back to Alkimi extension!");
+  //await alkimiPage.bringToFront();
+  //console.log("Switched back to Alkimi extension!");
 
-  // 🎯 Now perform further actions on Alkimi here
+  // Now perform further actions on Alkimi here
   // Example: await alkimiPage.click('selector-for-button');
 
   
