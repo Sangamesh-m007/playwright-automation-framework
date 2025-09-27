@@ -74,7 +74,6 @@ test.describe('Alkimi DSP Validation', () => {
 
     console.log("learning github")
   console.log("learning how to pull")
-    console.log("learning how to fetch")
   });
 
 });
