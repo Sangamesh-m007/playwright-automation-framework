@@ -70,6 +70,9 @@ test.describe('Alkimi DSP Validation', () => {
     await page.locator('//button[.="Next Step"]').click();
     await page.waitForTimeout(3000);
     }
+
+
+    console.log("learning github")
   
   });
 
